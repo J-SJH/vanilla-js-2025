@@ -1,0 +1,57 @@
+.bookmark-list {
+    margin-top: 20px;
+}
+
+.bookmark {
+    margin-bottom: 10px;
+}
+
+#bookmark-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 200px;
+    background-color: gray;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+#bookmark-form input {
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+#bookmark-form button {
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+}
+
+#add-bookmark-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: white;
+    border-radius: 100%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#add-bookmark-btn:hover {
+    background-color: gray;
+    opacity: 0.5;
+}
+
+.page-add {
+    position: absolute;
+    left: 30px;
+    top: 50px;
+}
