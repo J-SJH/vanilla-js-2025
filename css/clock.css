@@ -25,6 +25,8 @@
 }
 
 .clock-calendar {
+    margin-top: 50px;
+    margin-bottom: 50px;
     font-size: 60px;
 }
 
@@ -34,7 +36,7 @@
 
 .weather {
     margin-top: 20px;
-    margin-left: 130px;
+    margin-left: 50px;
     display: flex;
     border: 3px solid black;
     width: 200px;
@@ -42,4 +44,20 @@
     border-radius: 15px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.weather h1 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.weather h2 {
+    font-size: 25px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.weather h3 {
+    font-size: 25px;
 }
