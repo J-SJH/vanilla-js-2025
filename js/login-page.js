@@ -1,61 +1,60 @@
-const welcomeText = "Welcome<br>to<br>To-Do List";
-const newText = "What<br>is<br>Your Name?";
-const welcomeElement = document.getElementById("welcome-text");
-const nameInput = document.getElementById("name-input");
+document.addEventListener("DOMContentLoaded", function () {
+  const welcomeText = "Welcome\nto\nMy Page!!!";
+  const newText = "What\nis\nYour Name?";
+  const welcomeElement = document.getElementById("welcome-text");
+  const nameInput = document.getElementById("name-input");
 
-// 텍스트 타이핑 함수
-function typeText(text, element, speed, callback) {
-  let index = 0;
-  const cleanText = text.replace(/<br>/g, "\n"); // 줄바꿈 기준으로 나누기
-  const chars = cleanText.split(""); // 한 글자씩 배열로
+  function typeText(text, element, speed, callback) {
+    const lines = text.split("\n");
+    let lineIndex = 0;
+    let charIndex = 0;
 
-  element.innerHTML = "";
-  element.classList.add("typing");
+    element.innerHTML = "";
+    element.classList.add("typing");
 
-  const interval = setInterval(() => {
-    const currentChar = chars[index];
-    if (currentChar === "\n") {
-      element.innerHTML += "<br>";
-    } else {
-      element.innerHTML += currentChar;
+    function typeLine() {
+      if (lineIndex < lines.length) {
+        if (charIndex < lines[lineIndex].length) {
+          element.innerHTML += lines[lineIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(typeLine, speed);
+        } else {
+          element.innerHTML += "<br>";
+          lineIndex++;
+          charIndex = 0;
+          setTimeout(typeLine, speed);
+        }
+      } else {
+        element.classList.remove("typing");
+        callback && callback();
+      }
     }
-    index++;
-    if (index === chars.length) {
-      clearInterval(interval);
-      callback();
-    }
-  }, speed);
-}
 
-// 텍스트 지우기 함수
-function deleteText(element, speed, callback) {
-  const content = element.innerHTML.replace(/<br>/g, "\n");
-  let index = content.length;
-  const interval = setInterval(() => {
-    index--;
-    const newText = content.slice(0, index).replace(/\n/g, "<br>");
-    element.innerHTML = newText;
-    if (index <= 0) {
-      clearInterval(interval);
-      callback();
-    }
-  }, speed);
-}
-
-// 타이핑 애니메이션 시작
-function startTypingAnimation() {
-  typeText(welcomeText, welcomeElement, 100, () => {
-    setTimeout(() => {
-      deleteText(welcomeElement, 65, () => {
-        typeText(newText, welcomeElement, 100, () => {
-          nameInput.style.display = "block";
-          nameInput.focus();
+    typeLine();
+  }
+  function startTypingAnimation() {
+    typeText(welcomeText, welcomeElement, 100, () => {
+      setTimeout(() => {
+        deleteText(welcomeElement, 65, () => {
+          typeText(newText, welcomeElement, 100, () => {
+            nameInput.style.display = "block";
+            nameInput.focus();
+          });
         });
-      });
-    }, 1000);
-  });
-}
+      }, 1000);
+    });
+  }
+  function deleteText(element, speed, callback) {
+    let index = element.innerHTML.length;
+    const interval = setInterval(() => {
+      element.innerHTML = element.innerHTML.slice(0, index - 1);
+      index--;
+      if (index === 0) {
+        clearInterval(interval);
+        callback();
+      }
+    }, speed);
+  }
 
-window.onload = function () {
   startTypingAnimation();
-};
+});

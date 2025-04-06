@@ -1,7 +1,7 @@
 const loginPage = document.querySelector(".login-page");
 const mainPage = document.querySelector(".main-page");
 const userNameDisplay = document.querySelector(".user-name");
-const userInput = document.getElementById("name-input"); // 이름 바꿈
+const userInput = document.getElementById("name-input");
 
 function showMainPage(name) {
   loginPage.style.display = "none";
@@ -9,7 +9,6 @@ function showMainPage(name) {
   userNameDisplay.textContent = name;
 }
 
-// 이름이 이미 저장되어 있으면 로그인 페이지 건너뜀
 const storedName = localStorage.getItem("userName");
 if (storedName) {
   showMainPage(storedName);
@@ -30,13 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const textarea = detailContainer.querySelector("textarea");
   const button = detailContainer.querySelector("button");
 
-  // 저장된 내용 불러오기
   const savedDetail = localStorage.getItem("userDetail");
 
-  // 텍스트 박스 생성
   const detailBox = document.createElement("div");
   detailBox.className = "detail-box";
-  detailBox.style.whiteSpace = "pre-wrap"; // 줄바꿈 유지
+  detailBox.style.whiteSpace = "pre-wrap";
   detailBox.style.marginTop = "10px";
 
   if (savedDetail) {
@@ -57,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         button.textContent = "Edit";
       }
     } else {
-      // Edit 상태
       textarea.style.display = "block";
       textarea.value = localStorage.getItem("userDetail") || "";
       if (detailBox.parentNode) {
