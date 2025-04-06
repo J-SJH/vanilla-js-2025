@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const welcomeText = "Welcome\nto\nMy Page!!!";
+  const welcomeText = "Welcome\nto\nTo-Do List";
   const newText = "What\nis\nYour Name?";
   const welcomeElement = document.getElementById("welcome-text");
   const nameInput = document.getElementById("name-input");
