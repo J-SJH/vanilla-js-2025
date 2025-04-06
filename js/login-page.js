@@ -3,10 +3,11 @@ const newText = "What<br>is<br>Your Name?";
 const welcomeElement = document.getElementById("welcome-text");
 const nameInput = document.getElementById("name-input");
 
+// 텍스트 타이핑 함수
 function typeText(text, element, speed, callback) {
   let index = 0;
-  const cleanText = text.replace(/<br>/g, "\n");
-  const chars = cleanText.split("");
+  const cleanText = text.replace(/<br>/g, "\n"); // 줄바꿈 기준으로 나누기
+  const chars = cleanText.split(""); // 한 글자씩 배열로
 
   element.innerHTML = "";
   element.classList.add("typing");
@@ -26,6 +27,7 @@ function typeText(text, element, speed, callback) {
   }, speed);
 }
 
+// 텍스트 지우기 함수
 function deleteText(element, speed, callback) {
   const content = element.innerHTML.replace(/<br>/g, "\n");
   let index = content.length;
@@ -40,6 +42,7 @@ function deleteText(element, speed, callback) {
   }, speed);
 }
 
+// 타이핑 애니메이션 시작
 function startTypingAnimation() {
   typeText(welcomeText, welcomeElement, 100, () => {
     setTimeout(() => {
