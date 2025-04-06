@@ -1,7 +1,7 @@
 function loadBookmarks() {
   const bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
   const bookmarkList = document.getElementById("bookmark-list");
-  bookmarkList.innerHTML = "<h2>List :</h2>";
+  bookmarkList.innerHTML = "<h2>Bookmark :</h2>";
 
   bookmarks.forEach((bookmark) => {
     const div = document.createElement("div");
