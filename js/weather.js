@@ -2,6 +2,7 @@ const API_KEY = "93833bdbcd1067689d65aebb5936a1a3";
 
 const cityName = document.querySelector(".weather h2");
 const nowWeather = document.querySelector(".weather h3");
+const weatherContainer = document.querySelector(".weather");
 
 const savedLocation = localStorage.getItem("location");
 
@@ -36,9 +37,9 @@ function getWeather(lat, lon) {
                 const name = data.name;
                 const weather = data.weather[0];
                 console.log(`The weather in ${name} is ${weather.description}`);
-                
                 cityName.innerText = `${name}`;
                 nowWeather.innerText = `${weather.description}`;
+                changeBackground(weather.main);
             } else {
                 console.error("No weather data found");
             }
@@ -46,4 +47,21 @@ function getWeather(lat, lon) {
         .catch(error => {
             console.log("Error fetching weather data:", error);
         });
+}
+
+
+function changeBackground(weatherType) {
+    if (weatherType === "Clear") {
+        weatherContainer.style.backgroundColor = "#87CEEB";
+    } else if (weatherType === "Rain") {
+        weatherContainer.style.backgroundColor = "#2F4F4F";
+    } else if (weatherType === "Clouds") {
+        weatherContainer.style.backgroundColor = "#B0C4DE";
+    } else if (weatherType === "Snow") {
+        weatherContainer.style.backgroundColor = "#ADD8E6";
+    } else if (weatherType === "Thunderstorm") {
+        weatherContainer.style.backgroundColor = "#1E1E1E";
+    } else {
+        weatherContainer.style.backgroundColor = "#f0f0f0";
+    }
 }
