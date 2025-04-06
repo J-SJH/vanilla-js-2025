@@ -1,40 +1,108 @@
 .todo {
     background-color: rgb(255,247,209, 0.3);
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     flex-direction: column;
-    -webkit-box-shadow: -13px -18px 29px -5px #B9CA7F;
-    box-shadow: -13px -18px 29px -5px #B9CA7F;
+    align-items: center;
+    justify-content: flex-start;
     width: 37%;
     height: 400px;
     border-radius: 40px;
     overflow: hidden;
+    box-shadow: -13px -18px 29px -5px #B9CA7F;
+    padding-top: 20px;
 }
 
 .todo h1 {
-    bottom: 350px;
-    right: 325px;
-    position: fixed;
-    font-size: 70px;
+    font-size: 40px;
     font-weight: 700;
     font-style: italic;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 20px;
 }
 
 .todo-list {
-    margin-left: 50px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    height: 70%;
 }
 
 .todo-list input {
-    margin-right: 30px;
-    width: 500px;
+    width: 80%;
     height: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
 }
 
 .todo-items {
+    list-style-type: none;
+    padding: 0;
     margin-top: 10px;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .todo-items li {
-    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.todo-items li:hover {
+    background-color: #f1f1f1;
+}
+
+.todo-items li.checked {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.checkbox {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.delete {
+    cursor: pointer;
+    color: red;
+}
+
+.todo-input-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+.task-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 30px;
+    margin-left: 15px;
+    margin-bottom: 15px;
 }

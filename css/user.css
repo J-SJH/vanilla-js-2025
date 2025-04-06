@@ -6,8 +6,11 @@
     -webkit-box-shadow: 13px 18px 29px -5px #EAFFA1; 
     box-shadow: 13px 18px 29px -5px #B9CA7F;
     width: 37%;
+    max-width: 800px;
     height: 400px;
+    max-height: 500px;
     border-radius: 40px;
+    overflow: hidden;
 }
 
 .user img {
@@ -22,11 +25,11 @@
 }
 
 .user-detail {
-    margin-top:px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
- }
+}
 
 .user-detail textarea {
     field-sizing: content;
@@ -36,9 +39,10 @@
     margin-top: 30px;
     min-inline-size: 40ch;
     min-block-size: 20ch;
- }
+    width: 90%;
+}
 
- .user-detail button {
+.user-detail button {
     border: 0px solid black;
     justify-content: center;
     text-align: center;
@@ -49,4 +53,4 @@
     margin-top: 12px;
     width: 50px;
     height: 30px;
- }
+}
