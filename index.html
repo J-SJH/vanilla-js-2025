@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-page">
+        <h1 id="welcome-text"></h1>
+        <input type="text" id="name-input" placeholder="Type your name here" />
+      </div>
+    <div class="main-page main-page-hide">
+        <div class="page-add">
+            <button id="add-bookmark-btn">+</button>
+            <form id="bookmark-form">
+                <input type="text" id="bookmark-title" placeholder="Name" required>
+                <input type="url" id="bookmark-url" placeholder="Adress(include'https://')" required>
+                <button type="submit">Add</button>
+            </form>
+            <div class="bookmark-list" id="bookmark-list">
+            </div>
+        </div>
+        <div class="user">
+            <div class="user-img">
+                <img src="img/profile.jpg" alt="basic-image">
+            </div>
+            <div class="user-info">
+                <span class="user-name">Pikachu & Eevee</span>
+                <div class="user-detail">
+                    <textarea placeholder="Please write your detail :)"></textarea>
+                    <button>Save.</button>
+                </div>
+            </div>
+        </div>
+        <div class="quotes">
+            <h1>Quote of Day</h1>
+            <h2></h2>
+            <h3></h3>
+        </div>
+        <div class="clock">
+            <div class="clock-clock">
+                <h1>Calendar</h1>
+                <div class="clock-calendar">
+                    <h2 id="calendar"></h2>
+                </div>
+                <div class="clock-time" id="time"></div>
+            </div>
+            <div class="weather">
+                <h1>weather</h1>
+                <h2>city</h2>
+                <h3>weather</h3>
+            </div>
+        </div>
+        <div class="todo">
+            <h1>To Do List</h1>
+            <div class="todo-list">
+                <div class="todo-input-container">
+                    <input type="text" id="todo-input" placeholder="Type your tasks here!">
+                    <button id="add-task-btn" class="task-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <ul class="todo-items" id="todo-list"></ul>
+            </div>
+        </div>
+        <div class="killing-time">
+            <img src="img/ball.jpg">
+            <span>Click here!</span>
+        </div>
+    </div>
+
+    <script src="js/login-page.js" defer></script>
+    <script src="js/bookmark.js" defer></script>
+    <script src="js/background.js" defer></script>
+    <script src="js/quotes.js" defer></script>
+    <script src="js/weather.js" defer></script>
+    <script src="js/todo.js" defer></script>
+    <script src="js/clock.js" defer></script>
+    <script src="js/user.js" defer></script>
+    <script src="js/killing-time.js" defer></script>
+    <script src="https://kit.fontawesome.com/4d331c22b9.js" crossorigin="anonymous"></script>
+</body>
+</html>
